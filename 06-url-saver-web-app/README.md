@@ -6,7 +6,7 @@
 
 A simple URL bookmarking tool converted from a Chrome extension into a Progressive Web App. Perfect for quick link saving and organising!
 
-✨ [GET SAVING](https://bookmarker-tau-gilt.vercel.app/)
+✨ [DEMO](https://reb84.github.io/scrimba-frontend/06-url-saver-web-app/)
 
 ---
 

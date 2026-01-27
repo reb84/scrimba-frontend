@@ -122,6 +122,13 @@ footer {
     }
 }
 
+@media (min-width: 768px) {
+    .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 
 /* github link */
 .github-button {
