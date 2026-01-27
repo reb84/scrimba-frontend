@@ -1,0 +1,250 @@
+:root {
+    --bg-primary: #FFFFFF;
+    --text-primary: #262626;
+    --text-secondary: #455166;
+    --border: #dce1e9;
+    --icons: #6a7996;
+    --accent: #3067f8;
+    --like: #d95896;
+    --repost: #5abd6d;
+    --post-hover: #f7f8fa;
+}
+
+.dark-mode {
+    --bg-primary: #1d222c;
+    --text-primary: #ffffff;
+    --text-secondary: #acb6c6;
+    --border: #323c4e;
+    --icons: #72819c;
+    --post-hover: #222935;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* typography and icons */
+
+h1 {
+    color: var(--accent);
+    font-size: 28px;
+}
+
+
+/* icons */
+
+i {
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--icons);
+}
+
+.liked {
+    color: var(--like);
+}
+
+.reposted {
+    color: var(--repost);
+}
+
+
+
+/* layout */
+
+main,
+header {
+    width: 500px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tweet-input {
+    padding: 30px 20px;
+    border-radius: 20px;
+    background-color: var(--post-hover);
+}
+
+.tweet-input-area {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+
+textarea {
+    border: none;
+    resize: none;
+    padding: 10px;
+    margin: 0 0 20px 0;
+    height: 60px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: inherit;
+    background-color: var(--bg-primary);
+    color: var(--text-primary)
+}
+
+button {
+    background-color: var(--accent);
+    border: none;
+    color: white;
+    padding: 10px 19px;
+    border-radius: 20px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* tweet */
+
+.tweet {
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.tweet:hover {
+    background-color: var(--post-hover);
+}
+
+.tweet-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tweet-details {
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+    width: 380px;
+}
+
+.tweet-detail {
+    display: flex;
+    gap: 4px;
+}
+
+.tweet-reply {
+    border-top: 1px solid var(--border);
+    padding: 20px;
+    margin: 10px 10px 0px 50px;
+    border-radius: 0 0 20px 20px;
+}
+
+.tweet-reply:hover {
+    background-color: var(--bg-primary);
+}
+
+.handle {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: 0;
+}
+
+.tweet-text {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* images */
+
+.profile-pic {
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 48px;
+}
+
+/* utility */
+.hidden {
+    display: none;
+}
+
+#empty-message {
+    font-size: 12px;
+    color: var(--text-secondary);
+    padding-top: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+
+
+
+/* GitHub link */
+.github-button {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    width: 16px;
+    height: 16px;
+    color: var(--text-primary);
+}
+
+.github-button svg {
+    fill: currentColor;
+    width: 100%;
+    height: 100%;
+    transition: color 0.3s ease;
+}
+
+.github-button:hover {
+    color: var(--blue)
+}
+
+
+/* Theme Toggle */
+
+.toggle {
+    cursor: pointer;
+    align-content: center;
+}
+
+.toggle input {
+    display: none;
+}
+
+.toggle label {
+    display: block;
+    width: 30px;
+    height: 14px;
+    padding: 2px;
+    border-radius: 10px;
+    border: 2px solid var(--border);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.toggle label::after {
+    content: "";
+    display: inherit;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background: var(--border);
+    transition: 0.3s;
+}
+
+.toggle input:checked~label {
+    border-color: var(--accent);
+}
+
+.toggle input:checked~label::after {
+    translate: 16px 0;
+    background: var(--accent);
+}

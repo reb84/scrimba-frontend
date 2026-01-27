@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Oldagram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+        <!-- GitHub Corner -->
+    <a
+      href="https://github.com/reb84/my-scrimba-projects/tree/main/09-oldagram"
+      class="github-button"
+      aria-label="View source on GitHub"
+      target="_blank"
+      rel="noopener"
+    >
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <title>© 2025 | REB84</title>
+        <path
+          d="M12 .297c-6.63 0-12 5.373-12 12 
+             0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 
+             0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 
+             C4.422 18.07 3.633 17.7 3.633 17.7 
+             c-1.087-.744.084-.729.084-.729 
+             1.205.084 1.838 1.236 1.838 1.236 
+             1.07 1.835 2.809 1.305 3.495.998 
+             .108-.776.417-1.305.76-1.605 
+             -2.665-.3-5.466-1.332-5.466-5.93 
+             0-1.31.465-2.38 1.235-3.22 
+             -.135-.303-.54-1.523.105-3.176 
+             0 0 1.005-.322 3.3 1.23 
+             .96-.267 1.98-.399 3-.405 
+             1.02.006 2.04.138 3 .405 
+             2.28-1.552 3.285-1.23 3.285-1.23 
+             .645 1.653.24 2.873.12 3.176 
+             .765.84 1.23 1.91 1.23 3.22 
+             0 4.61-2.805 5.625-5.475 5.92 
+             .42.36.81 1.096.81 2.22 
+             0 1.606-.015 2.896-.015 3.286 
+             0 .315.21.69.825.57 
+             C20.565 22.092 24 17.592 24 12.297 
+             c0-6.627-5.373-12-12-12"
+        />
+      </svg>
+    </a>
+    <!-- GitHub Corner -->
+    <header>
+      <div class="app-header">
+        <a href="">
+          <img src="assets/logo.png" alt="Oldagram logo" class="app-logo" />
+        </a>
+
+        <img
+          src="assets/user-avatar.png"
+          alt="User avatar"
+          class="avatar-img"
+        />
+      </div>
+    </header>
+
+    <main class="feed">
+      <div class="post">
+        <div class="post-header">
+          <div class="avatar">
+            <img
+              src="assets/avatar-vangogh.jpg"
+              alt="Account Avatar"
+              class="avatar-img"
+            />
+          </div>
+          <div class="post-header-content">
+            <span class="username">Vincent van Gogh</span>
+            <span class="location">Zundert, Netherlands</span>
+          </div>
+        </div>
+        <div class="post-image">
+          <img
+            src="assets/post-vangogh.jpg"
+            alt="A self portrait of Vincent van Gogh"
+            class="post-img"
+          />
+        </div>
+        <div class="post-actions">
+          <button class="action-btn" id="like1" aria-label="Like post">
+            <i data-lucide="heart"></i>
+          </button>
+          <button class="action-btn" aria-label="Comment">
+            <i data-lucide="message-circle"></i>
+          </button>
+          <button class="action-btn" aria-label="Share post">
+            <i data-lucide="send"></i>
+          </button>
+          <span class="bookmark-btn"
+            ><button class="action-btn" aria-label="Save post">
+              <i data-lucide="bookmark"></i></button
+          ></span>
+        </div>
+        <div class="post-likes">1,834 likes</div>
+        <div class="post-caption">
+          <span class="username">vincey1853</span>
+          <span>just took a few mushrooms lol</span>
+        </div>
+        <div class="post-time">2 hours ago</div>
+      </div>
+
+      <div class="post">
+        <div class="post-header">
+          <div class="avatar">
+            <img
+              src="assets/avatar-courbet.jpg"
+              alt="Account Avatar"
+              class="avatar-img"
+            />
+          </div>
+          <div class="post-header-content">
+            <span class="username">Gustave Courbet</span>
+            <span class="location">Ornans, France</span>
+          </div>
+        </div>
+        <div class="post-image">
+          <img
+            src="assets/post-courbet.jpg"
+            alt="A self portrait of Gustave Courbet"
+            class="post-img"
+          />
+        </div>
+        <div class="post-actions">
+          <button class="action-btn" id="like1" aria-label="Like post">
+            <i data-lucide="heart"></i>
+          </button>
+          <button class="action-btn" aria-label="Comment">
+            <i data-lucide="message-circle"></i>
+          </button>
+          <button class="action-btn" aria-label="Share post">
+            <i data-lucide="send"></i>
+          </button>
+          <span class="bookmark-btn"
+            ><button class="action-btn" aria-label="Save post">
+              <i data-lucide="bookmark"></i></button
+          ></span>
+        </div>
+        <div class="post-likes">2,224 likes</div>
+        <div class="post-caption">
+          <span class="username">gus1819</span>
+          <span>i'm feelin a bit stressed tbh</span>
+        </div>
+        <div class="post-time">3 hours ago</div>
+      </div>
+
+      <div class="post">
+        <div class="post-header">
+          <div class="avatar">
+            <img
+              src="assets/avatar-ducreux.jpg"
+              alt="Account Avatar"
+              class="avatar-img"
+            />
+          </div>
+          <div class="post-header-content">
+            <span class="username">Joseph Ducreux</span>
+            <span class="location">Zundert, Netherlands</span>
+          </div>
+        </div>
+        <div class="post-image">
+          <img
+            src="assets/post-ducreux.jpg"
+            alt="A self portrait of Joseph Ducreux"
+            class="post-img"
+          />
+        </div>
+        <div class="post-actions">
+          <button class="action-btn" id="like1" aria-label="Like post">
+            <i data-lucide="heart"></i>
+          </button>
+          <button class="action-btn" aria-label="Comment">
+            <i data-lucide="message-circle"></i>
+          </button>
+          <button class="action-btn" aria-label="Share post">
+            <i data-lucide="send"></i>
+          </button>
+          <span class="bookmark-btn"
+            ><button class="action-btn" aria-label="Save post">
+              <i data-lucide="bookmark"></i></button
+          ></span>
+        </div>
+        <div class="post-likes">1,961 likes</div>
+        <div class="post-caption">
+          <span class="username">jd1735</span>
+          <span
+            >gm friends! which coin are YOU stacking up today?? post below and
+            WAGMI!</span
+          >
+        </div>
+        <div class="post-time">6 hours ago</div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="app-footer">
+        <div class="footer-actions">
+          <button class="action-btn" aria-label="Home">
+            <i data-lucide="house"></i>
+          </button>
+          <button class="action-btn" aria-label="Search">
+            <i data-lucide="search"></i>
+          </button>
+          <button class="action-btn" aria-label="Create">
+            <i data-lucide="square-plus"></i>
+          </button>
+          <button class="action-btn" aria-label="Reels">
+            <i data-lucide="film"></i>
+          </button>
+          <button class="action-btn" aria-label="Account">
+            <i data-lucide="user"></i>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
