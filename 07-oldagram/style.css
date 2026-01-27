@@ -203,14 +203,14 @@ footer {
 
 
 
-/* GitHub link */
+/* github link */
 .github-button {
     position: absolute;
-    top: 0.2rem;
-    right: 0.2rem;
-    width: 16px;
-    height: 16px;
-    color: var(--text-primary);
+    top: 1rem;
+    right: 1rem;
+    width: 18px;
+    height: 18px;
+    color: #111;
 }
 
 .github-button svg {
@@ -221,5 +221,5 @@ footer {
 }
 
 .github-button:hover {
-    color: skyblue;
+    color: #0366d6;
 }

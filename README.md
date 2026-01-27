@@ -18,4 +18,4 @@ Each folder contains a standalone project exploring different concepts and techn
 - **project-10** - Responsive Learning Journal
 
 
-All projects are deployed via GitHub Pages: ✨ [View here](https://reb84.github.io/scrimba-frontend/)
+All projects are deployed via GitHub Pages: ✨ [VIEW HERE](https://reb84.github.io/scrimba-frontend/)

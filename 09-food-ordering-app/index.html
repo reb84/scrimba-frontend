@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Score Board</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
-
+    <title>Jimmy's Diner</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+    <!-- stylesheet -->
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <!-- GitHub Corner -->
     <a
@@ -50,39 +53,57 @@
       </svg>
     </a>
     <!-- GitHub Corner -->
-
-    <main class="container">
-      <div class="scribble-base score-board">
-        <div>
-          <h3>HOME</h3>
-          <div class="score-container">
-            <span class="score" id="home-score">0</span>
-          </div>
-          <div class="score-btn-container">
-            <button id="home-one" onclick="homeOne()">+1</button>
-            <button id="home-two" onclick="homeTwo()">+2</button>
-            <button id="home-three" onclick="homeThree()">+3</button>
-          </div>
+    <div class="container">
+      <header>
+        <div class="header-content">
+          <h1>Jimmy's Diner</h1>
+          <h2>The best burgers and pizzas in town.</h2>
         </div>
+      </header>
+      <main class="main-content">
+        <div id="menu-section"></div>
+        <div class="order-section" id="order-section"></div>
+      </main>
 
-        <div>
-          <h3>GUEST</h3>
-          <div class="score-container">
-            <span class="score" id="guest-score">0</span>
-          </div>
-          <div class="score-btn-container">
-            <button id="guest-one" onclick="guestOne()">+1</button>
-            <button id="guest-two" onclick="guestTwo()">+2</button>
-            <button id="guest-three" onclick="guestThree()">+3</button>
-          </div>
-        </div>
-      </div>
+      <!-- payment modal -->
 
-      <div class="reset-button">
-        <button id="reset" onclick="reset()">New Game</button>
-      </div>
-    </main>
+      	<div class="modal" id="modal">
 
-    <script src="script.js"></script>
+		<div class="modal-inner" id="modal-inner">
+			<h2>Enter card details</h2>
+			
+<form id="payment-form">
+  <input 
+    type="text" 
+    name="name" 
+    placeholder="Enter your name" 
+    required
+  />
+  
+  <input 
+    type="text" 
+    name="cardNumber" 
+    placeholder="1234 5678 9012 3456"
+    pattern="[0-9]{13,19}"
+    maxlength="19"
+    required
+  />
+
+  <input 
+    type="text" 
+    name="cvv" 
+    placeholder="CVV"
+    pattern="[0-9]{3,4}"
+    maxlength="4"
+    required
+  />
+  
+  <button type="submit" id="submit-btn" class="purchase-btn">Pay</button>
+</form>
+
+		</div>
+	</div>
+
+    <script type="module" src="script.js"></script>
   </body>
 </html>

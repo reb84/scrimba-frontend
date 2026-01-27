@@ -62,9 +62,9 @@ button {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    width: 24px;
-    height: 24px;
-    color: #636363;
+    width: 18px;
+    height: 18px;
+    color: #111;
 }
 
 .github-button svg {
