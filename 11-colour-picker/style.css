@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
 body {
     background-color: #E5E5E5;
+    font-family: "Inter", sans-serif;
     margin: 0 auto;
+    color: #374151;
 }
 
 header {
@@ -16,4 +20,48 @@ header {
     width: 550px;
     aspect-ratio: 1;
     margin: auto;
+}
+
+/* controls */
+
+.controls {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button,
+#seed-colour,
+#scheme {
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+}
+
+#seed-colour {
+    min-height: 42px;
+}
+
+#scheme {
+    min-width: 310px;
+}
+
+
+button {
+    font-size: 0.75rem;
+    background-color: transparent;
+    padding: 0 10px;
+    margin: 0;
+}
+
+/* hide labels */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
