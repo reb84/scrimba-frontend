@@ -14,25 +14,21 @@
       <div class="color-picker-container">
         <div class="controls">
           <label for="seed-colour" class="visually-hidden">Seed colour</label>
-          <input
-            type="color"
-            id="seed-colour"
-            name="seed-colour"
-            value="#3498db"
-          />
+          <input type="color" id="seed-colour" name="seed-colour" />
 
           <label for="scheme" class="visually-hidden">Colour scheme</label>
           <select name="scheme" id="scheme">
             <option value="monochrome">Monochrome</option>
-            <option value="monochrome-drk">Monochrome-dark</option>
-            <option value="monochrome-lgt">Monochrome-light</option>
+            <option value="monochrome-dark">Monochrome-dark</option>
+            <option value="monochrome-light">Monochrome-light</option>
             <option value="analogic">Analogic</option>
             <option value="complement">Complement</option>
             <option value="analogic-complement">Analogic-complement</option>
             <option value="triad">Triad</option>
+            <option value="quad">Quad</option>
           </select>
 
-          <button type="submit">Get Color Scheme</button>
+          <button id="submit-btn">Get Color Scheme</button>
         </div>
       </div>
     </main>
