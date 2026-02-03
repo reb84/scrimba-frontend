@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E5E5E5;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+}
+
+.color-picker-container {
+    background-color: #fff;
+    width: 550px;
+    aspect-ratio: 1;
+    margin: auto;
+}
