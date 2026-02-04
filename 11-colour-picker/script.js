@@ -26,9 +26,12 @@ const render = (data) => {
       return `
     <div class="color-card">
     <img src="${color.image.bare}">
-    <p>${color.hex.value}</p>
 </div>
      `;
     })
+    .join("");
+
+  displayHex.innerHTML = data.colors
+    .map((color) => `<p>${color.hex.value}</p>`)
     .join("");
 };

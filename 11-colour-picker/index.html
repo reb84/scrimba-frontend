@@ -52,7 +52,12 @@
       <div class="color-picker-container">
         <div class="controls">
           <label for="seed-colour" class="visually-hidden">Seed colour</label>
-          <input type="color" id="seed-colour" name="seed-colour" />
+          <input
+            type="color"
+            id="seed-colour"
+            name="seed-colour"
+            value="#3498db"
+          />
 
           <label for="scheme" class="visually-hidden">Colour scheme</label>
           <select name="scheme" id="scheme">
@@ -70,6 +75,7 @@
         </div>
         <div class="scheme-container">
           <div id="display-scheme"></div>
+          <div id="display-hex" class="hex-display" aria-live="polite"></div>
         </div>
       </div>
     </main>
