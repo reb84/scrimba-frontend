@@ -18,7 +18,6 @@ const getColors = (seedColor, schemeValue) => {
   )
     .then((res) => res.json())
     .then((data) => render(data));
-  // .then((data) => console.log(data));
 };
 
 const render = (data) => {
