@@ -5,6 +5,7 @@
     --bg: #E5E5E5;
     --foreground: #fff;
     --border: #D1D5DB;
+    --text: #374151;
 }
 
 
@@ -16,7 +17,7 @@ body {
     background-color: var(--bg);
     font-family: "Inter", sans-serif;
     margin: 0 auto;
-    color: #374151;
+    color: var(--text);
 }
 
 header {
@@ -25,10 +26,11 @@ header {
 
 .color-picker-container {
     background-color: var(--foreground);
-    width: 550px;
+    max-width: 550px;
     aspect-ratio: 1 / 1;
     margin: auto;
-    border-radius: var(--radius)
+    border-radius: var(--radius);
+    box-shadow: 11px 12px 19px -11px rgba(0, 0, 0, 0.4);
 }
 
 /* controls */
@@ -44,15 +46,19 @@ button,
 #seed-colour,
 #scheme {
     border: 1px solid var(--border);
-    border-radius: var(--radius)
+    border-radius: var(--radius);
+    color: var(--text);
 }
 
 #seed-colour {
-    min-height: 42px;
+    max-width: 60px;
+    height: auto;
 }
 
 #scheme {
-    min-width: 310px;
+    width: 100%;
+    margin: 0 20px;
+    max-width: 310px;
 }
 
 
@@ -61,6 +67,13 @@ button {
     background-color: transparent;
     padding: 0 10px;
     margin: 0;
+    transition: 300ms;
+}
+
+button:hover {
+    background-color: var(--bg);
+    border: 1px solid var(--bg);
+    cursor: pointer;
 }
 
 /* hide labels */
@@ -84,21 +97,30 @@ button {
 
 .color-card {
     text-align: center;
-    font-size: 12px;
+    font-size: 0.75em;
     flex-direction: column;
 }
 
 .color-card img {
-    min-height: 415px;
-    width: 110px;
+    min-height: 415px !important;
+    max-width: 110px;
 }
 
 .color-card p {
     height: 45px;
-    margin: auto;
     align-content: center;
+    margin: auto;
 }
 
+.instructions {
+    font-size: 0.75em;
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    opacity: 0.6;
+    font-style: italic;
+}
 
 /* github link */
 .github-button {
