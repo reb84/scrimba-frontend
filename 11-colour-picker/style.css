@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+:root {
+    --radius: 6px;
+    --bg: #E5E5E5;
+    --foreground: #fff;
+    --border: #D1D5DB;
+}
+
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: #E5E5E5;
+    background-color: var(--bg);
     font-family: "Inter", sans-serif;
     margin: 0 auto;
     color: #374151;
@@ -16,10 +24,11 @@ header {
 }
 
 .color-picker-container {
-    background-color: #fff;
+    background-color: var(--foreground);
     width: 550px;
-    aspect-ratio: 1;
+    aspect-ratio: 1 / 1;
     margin: auto;
+    border-radius: var(--radius)
 }
 
 /* controls */
@@ -28,13 +37,14 @@ header {
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    min-height: 90px;
 }
 
 button,
 #seed-colour,
 #scheme {
-    border: 1px solid #D1D5DB;
-    border-radius: 6px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius)
 }
 
 #seed-colour {
@@ -70,10 +80,43 @@ button {
 
 #display-scheme {
     display: flex;
-    justify-content: center;
 }
 
 .color-card {
     text-align: center;
     font-size: 12px;
+    flex-direction: column;
+}
+
+.color-card img {
+    min-height: 415px;
+    width: 110px;
+}
+
+.color-card p {
+    height: 45px;
+    margin: auto;
+    align-content: center;
+}
+
+
+/* github link */
+.github-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 18px;
+    height: 18px;
+    color: #111;
+}
+
+.github-button svg {
+    fill: currentColor;
+    width: 100%;
+    height: 100%;
+    transition: color 0.3s ease;
+}
+
+.github-button:hover {
+    color: #0366d6;
 }
