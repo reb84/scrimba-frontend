@@ -66,9 +66,14 @@ button {
     border-width: 0;
 }
 
+/* colour scheme display */
 
-.scheme-container {
+#display-scheme {
     display: flex;
     justify-content: center;
 }
 
+.color-card {
+    text-align: center;
+    font-size: 12px;
+}
