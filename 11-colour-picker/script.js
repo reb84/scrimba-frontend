@@ -21,17 +21,14 @@ const getColors = (seedColor, schemeValue) => {
 };
 
 const render = (data) => {
-  displayScheme.innerHTML = data.colors
-    .map((color) => {
-      return `
-    <div class="color-card">
-    <img src="${color.image.bare}">
-</div>
-     `;
-    })
-    .join("");
-
-  displayHex.innerHTML = data.colors
-    .map((color) => `<p>${color.hex.value}</p>`)
-    .join("");
+displayScheme.innerHTML = data.colors
+  .map((color) => {
+    return `
+      <div class="color-card">
+        <img src="${color.image.bare}">
+        <p>${color.hex.value}</p>
+      </div>
+    `;
+  })
+  .join("");
 };
