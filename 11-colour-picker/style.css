@@ -65,3 +65,10 @@ button {
     white-space: nowrap;
     border-width: 0;
 }
+
+
+.scheme-container {
+    display: flex;
+    justify-content: center;
+}
+
