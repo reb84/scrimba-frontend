@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* github link */
+.github-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 18px;
+    height: 18px;
+    color: #111;
+}
+
+.github-button svg {
+    fill: currentColor;
+    width: 100%;
+    height: 100%;
+    transition: color 0.3s ease;
+}
+
+.github-button:hover {
+    color: #0366d6;
+}

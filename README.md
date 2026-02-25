@@ -16,7 +16,10 @@ Each folder contains a standalone project exploring different concepts and techn
 - **project-8** - Twimba
 - **project-9** - Food Ordering App
 - **project-10** - Responsive Learning Journal
+
+### Working With APIs
 - **project-11** - Colour Picker
+- **project-12** - Movie Watchlist
 
 
 All projects are deployed via GitHub Pages: ✨ [VIEW HERE](https://reb84.github.io/scrimba-frontend/)
