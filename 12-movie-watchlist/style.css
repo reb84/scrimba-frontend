@@ -1,25 +1,226 @@
-* {
-    box-sizing: border-box;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #fff;
+            color: #111010;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .app {
+            width: 550px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+        }
+
+        /* header */
+
+        .site-header {
+            width: 100%;
+            height: 220px;
+            position: relative;
+            overflow: visible;
+            flex-shrink: 0;
+        }
+
+        .header-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom, rgba(10, 9, 9, 0.55) 0%, rgba(10, 9, 9, 0.72) 100%),
+                url('https://images.unsplash.com/photo-1753944847480-92f369a5f00e?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+        }
 
 
-/* github link */
-.github-button {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 18px;
-    height: 18px;
-    color: #111;
-}
+        .header-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 32px 28px 0;
+        }
 
-.github-button svg {
-    fill: currentColor;
-    width: 100%;
-    height: 100%;
-    transition: color 0.3s ease;
-}
+        .site-header h1 {
+            font-size: 3.4rem;
+            color: #fff;
+            letter-spacing: 0.02em;
+        }
 
-.github-button:hover {
-    color: #0366d6;
-}
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #e8c96a;
+        }
+
+        /* search bar */
+
+        .search-bar {
+            position: absolute;
+            bottom: -24px;
+            left: 28px;
+            right: 28px;
+            z-index: 10;
+            display: flex;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #D1D5DB;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 14px 18px 14px 42px;
+            border: none;
+            background: #fff;
+            font-size: 0.95rem;
+            color: #111010;
+            outline: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238a8580' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: 14px center;
+        }
+
+        .search-bar input::placeholder {
+            color: #bbb;
+        }
+
+        .search-bar button {
+            padding: 14px 24px;
+            background: #F9FAFB;
+            color: #111010;
+            border: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            border-left: 1px solid #D1D5DB;
+        }
+
+        .search-bar button:hover {
+            background: #e8c96a;
+        }
+
+        /* main */
+
+        .results {
+            flex: 1;
+            padding: 52px 28px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            overflow-y: auto;
+        }
+
+/* film card */
+        .film-card {
+            display: flex;
+            gap: 18px;
+            padding: 24px 0;
+            border-bottom: 1px solid #e0d9cf;
+        }
+
+        .film-card img {
+            width: 100px;
+            height: 148px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .film-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding-top: 2px;
+        }
+
+        .film-title-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .film-info h2 {
+            font-size: 1.5rem;
+            letter-spacing: 0.03em;
+            color: #111010;
+            line-height: 1;
+        }
+
+        .meta-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .runtime {
+            font-size: 0.78rem;
+            color: #8a8580;
+            font-weight: 300;
+        }
+
+        .genres {
+            font-size: 0.78rem;
+            color: #8a8580;
+            font-weight: 300;
+        }
+
+        .dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: #8a8580;
+            display: inline-block;
+        }
+
+        .synopsis {
+            font-size: 0.82rem;
+            line-height: 1.6;
+            color: #555;
+            font-weight: 300;
+        }
+
+
+
+
+
+
+        /* github link */
+        .github-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 18px;
+            height: 18px;
+            color: #111;
+        }
+
+        .github-button svg {
+            fill: currentColor;
+            width: 100%;
+            height: 100%;
+            transition: color 0.3s ease;
+        }
+
+        .github-button:hover {
+            color: #0366d6;
+        }
