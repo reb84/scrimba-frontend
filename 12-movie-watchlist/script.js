@@ -2,6 +2,7 @@ const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
 const resultsContainer = document.getElementById("results");
 const messageContainer = document.getElementById("message");
+let searchResults = [];
 
 async function handleClick(e) {
   e.preventDefault();
@@ -16,7 +17,7 @@ async function handleClick(e) {
     );
     const data = await res.json();
 
-    const searchResults = await Promise.all(
+    searchResults = await Promise.all(
       data.Search.map((movie) =>
         fetch(
           `https://www.omdbapi.com/?i=${movie.imdbID}&apikey=59a9ee25`,
@@ -24,6 +25,7 @@ async function handleClick(e) {
       ),
     );
     render(searchResults);
+    updateButtons();
   }
 }
 
@@ -53,7 +55,7 @@ const render = (movies) => {
           <span class="runtime">${data.Runtime}</span>
           <span class="dot"></span>
           <span class="genres">${data.Genre}</span>
-          <button class="watchlist-add" data-id="${data.imdbID}">
+          <button id="watchlist-add" class="watchlist-add" data-id="${data.imdbID}">
   <i class="fa-solid fa-circle-plus"></i>
   Watchlist
 </button>
@@ -66,15 +68,36 @@ const render = (movies) => {
     .join("");
 };
 
+const updateButtons = () => {
+  const watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+  const buttons = document.querySelectorAll(".watchlist-add");
+
+  buttons.forEach((btn) => {
+    const isInWatchlist = watchlist.find((m) => m.imdbID === btn.dataset.id);
+    if (isInWatchlist) {
+      btn.classList.add("remove");
+      btn.innerHTML = `<i class="fa-solid fa-circle-minus"></i> Remove`;
+    }
+  });
+};
+
 document.addEventListener("click", (e) => {
   const btn = e.target.closest(".watchlist-add");
+
   if (btn) {
     const id = btn.dataset.id;
-    btn.classList.toggle("remove");
 
+    const watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+    const movieObject = searchResults.find((m) => m.imdbID === id);
+
+    btn.classList.toggle("remove");
     if (btn.classList.contains("remove")) {
+      watchlist.push(movieObject);
+      localStorage.setItem("watchlist", JSON.stringify(watchlist));
       btn.innerHTML = `<i class="fa-solid fa-circle-minus"></i> Remove`;
     } else {
+      const updated = watchlist.filter((m) => m.imdbID !== id);
+      localStorage.setItem("watchlist", JSON.stringify(updated));
       btn.innerHTML = `<i class="fa-solid fa-circle-plus"></i> Watchlist`;
     }
   }
