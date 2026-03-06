@@ -129,13 +129,20 @@ nav a:hover {
     overflow-y: auto;
 }
 
-
-.filmIcon {
-    font-size: 8rem;
-    color: #eee;
+.message {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #DFDDDD;
     margin: auto;
+    text-align: center;
+    width: 60%;
 }
 
+.filmIcon {
+    font-size: 5rem;
+    color: #DFDDDD;
+    padding: 10px;
+}
 
 
 /* film card */
@@ -173,6 +180,11 @@ nav a:hover {
     font-size: 1.12rem;
     color: #000;
     line-height: 1;
+}
+
+.year {
+    font-size: 0.75rem;
+    color: #111827;
 }
 
 .rating {
@@ -213,6 +225,19 @@ nav a:hover {
 
 .watchlist-add {
     margin-left: 20px;
+    border: 0;
+    background: none;
+}
+
+.watchlist-add {
+    margin-left: 20px;
+    border: 0;
+    background: none;
+}
+
+.watchlist-add:hover {
+    color: #e8c96a;
+    cursor: pointer;
 }
 
 
