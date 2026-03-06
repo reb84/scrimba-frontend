@@ -50,11 +50,17 @@ const render = (movies) => {
     .map(
       (data) => `
     <article class="film-card">
+         <div class="left">
       <img
         src="${data.Poster}"
         alt="${data.Title} poster"
           onerror="this.src='noimg.jpg'"
       />
+      <button class="watchlist-add" data-id="${data.imdbID}">
+  <i class="fa-solid fa-circle-plus"></i>
+  Watchlist
+</button>
+</div>
       <div class="film-info">
         <div class="film-title-row">
           <h2>${data.Title}</h2>
@@ -67,10 +73,6 @@ const render = (movies) => {
           <span class="runtime">${data.Runtime}</span>
           <span class="dot"></span>
           <span class="genres">${data.Genre}</span>
-          <button class="watchlist-add" data-id="${data.imdbID}">
-  <i class="fa-solid fa-circle-plus"></i>
-  Watchlist
-</button>
         </div>
         <p class="synopsis">${data.Plot}</p>
       </div>
@@ -141,11 +143,17 @@ const renderWatchlist = () => {
     .map(
       (data) => `
     <article class="film-card">
+    <div class="left">
       <img
         src="${data.Poster}"
         alt="${data.Title} poster"
           onerror="this.src='noimg.jpg'"
       />
+      <button class="watchlist-add" data-id="${data.imdbID}">
+  <i class="fa-solid fa-circle-plus"></i>
+  Watchlist
+</button>
+</div>
       <div class="film-info">
         <div class="film-title-row">
           <h2>${data.Title}</h2>
@@ -158,10 +166,7 @@ const renderWatchlist = () => {
           <span class="runtime">${data.Runtime}</span>
           <span class="dot"></span>
           <span class="genres">${data.Genre}</span>
-          <button class="watchlist-add" data-id="${data.imdbID}">
-  <i class="fa-solid fa-circle-plus"></i>
-  Watchlist
-</button>
+          
         </div>
         <p class="synopsis">${data.Plot}</p>
       </div>
