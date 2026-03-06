@@ -107,6 +107,52 @@ document.addEventListener("click", (e) => {
       const updated = watchlist.filter((m) => m.imdbID !== id);
       localStorage.setItem("watchlist", JSON.stringify(updated));
       btn.innerHTML = `<i class="fa-solid fa-circle-plus"></i> Watchlist`;
+
+      if (watchlistContainer) {
+        renderWatchlist();
+      }
     }
   }
 });
+
+const renderWatchlist = () => {
+  const watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+  watchlistContainer.innerHTML = watchlist
+    .map(
+      (data) => `
+    <article class="film-card">
+      <img
+        src="${data.Poster}"
+        alt="${data.Title} poster"
+          onerror="this.src='noimg.jpg'"
+      />
+      <div class="film-info">
+        <div class="film-title-row">
+          <h2>${data.Title}</h2>
+        <span class="year">(${data.Year})</span>
+          <span class="rating">
+            <i class="fa-solid fa-star fa-xs"></i>${data.imdbRating}
+          </span>
+        </div>
+        <div class="meta-row">
+          <span class="runtime">${data.Runtime}</span>
+          <span class="dot"></span>
+          <span class="genres">${data.Genre}</span>
+          <button class="watchlist-add" data-id="${data.imdbID}">
+  <i class="fa-solid fa-circle-plus"></i>
+  Watchlist
+</button>
+        </div>
+        <p class="synopsis">${data.Plot}</p>
+      </div>
+    </article>
+  `,
+    )
+    .join("");
+
+  updateButtons();
+};
+
+if (watchlistContainer) {
+  renderWatchlist();
+}
