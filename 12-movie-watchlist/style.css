@@ -17,7 +17,7 @@ body {
 }
 
 .app {
-        background: #fff;
+    background: #fff;
     width: 550px;
     min-height: 100vh;
     display: flex;
@@ -129,6 +129,15 @@ nav a:hover {
     overflow-y: auto;
 }
 
+
+.filmIcon {
+    font-size: 8rem;
+    color: #eee;
+    margin: auto;
+}
+
+
+
 /* film card */
 .film-card {
     display: flex;
@@ -203,7 +212,7 @@ nav a:hover {
 }
 
 .watchlist-add {
-   margin-left: 20px;
+    margin-left: 20px;
 }
 
 
