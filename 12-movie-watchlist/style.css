@@ -2,7 +2,14 @@
 
 
 :root {
+    --app-bg: #ececec;
+    --bg: #fff;
+    --text: #111010;
+    --subtext: #2f3032;
+    --light-text: #6B7280;
     --hover: #e8c96a;
+    --rating: #c9a84c;
+    --message: #DFDDDD;
 }
 
 * {
@@ -16,11 +23,10 @@ a {
 }
 
 
-
 body {
-    background: #ececec;
+    background: var(--app-bg);
     font-family: "Inter", sans-serif;
-    color: #111010;
+    color: var(--text);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,8 +34,9 @@ body {
 }
 
 .app {
-    background: #fff;
-    width: 550px;
+    background: var(--bg);
+    width: 100%;
+    max-width: 550px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -67,15 +74,15 @@ body {
 }
 
 .site-header h1 {
-    font-size: 2.62rem;
+    font-size: 2rem;
     font-weight: 800;
-    color: #fff;
+    color: var(--bg);
     display: flex;
     align-items: center;
 }
 
 nav a {
-    color: #fff;
+    color: var(--bg);
     text-decoration: none;
     font-size: 0.87rem;
     font-weight: 700;
@@ -96,16 +103,15 @@ nav a:hover {
     display: flex;
     border-radius: 6px;
     overflow: hidden;
-    border: 1px solid #D1D5DB;
+    border: 1px solid var(--message);
 }
 
 .search-bar input {
     flex: 1;
     padding: 14px 18px 14px 42px;
     border: none;
-    background: #fff;
-    font-size: 0.87rem;
-    color: #6B7280;
+    background: var(--bg);
+    font-size: 1rem;
     outline: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238a8580' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
@@ -113,16 +119,16 @@ nav a:hover {
 }
 
 .search-bar input::placeholder {
-    color: #bbb;
+    color: var(--light-text);
 }
 
 .search-bar button {
     padding: 14px 24px;
-    background: #F9FAFB;
-    color: #374151;
+    background: var(--app-bg);
+    color: var(--text);
     border: none;
     font-size: 0.87rem;
-    border-left: 1px solid #D1D5DB;
+    border-left: 1px solid var(--message);
 }
 
 .search-bar button:hover {
@@ -144,16 +150,20 @@ nav a:hover {
 .message {
     font-size: 1.125rem;
     font-weight: bold;
-    color: #DFDDDD;
+    color: var(--message);
     margin: auto;
     text-align: center;
     width: 70%;
     line-height: 2;
 }
 
+.add-movies {
+    display: block;
+}
+
 .add-movies a {
     font-size: 0.875rem;
-    color: #363636;
+    color: var(--subtext);
 }
 
 .add-movies a:hover {
@@ -162,7 +172,7 @@ nav a:hover {
 
 .filmIcon {
     font-size: 5rem;
-    color: #DFDDDD;
+    color: var(--message);
     padding: 10px;
 }
 
@@ -172,7 +182,7 @@ nav a:hover {
     display: flex;
     gap: 18px;
     padding: 20px 0;
-    border-bottom: 1px solid #e0d9cf;
+    border-bottom: 1px solid var(--message);
 }
 
 .film-card img {
@@ -200,13 +210,13 @@ nav a:hover {
 
 .film-info h2 {
     font-size: 1.12rem;
-    color: #000;
+    color: var(--text);
     line-height: 1;
 }
 
 .year {
     font-size: 0.75rem;
-    color: #111827;
+    color: var(--subtext);
 }
 
 .rating {
@@ -215,17 +225,17 @@ nav a:hover {
     gap: 4px;
     font-size: 0.85rem;
     font-weight: 500;
-    color: #c9a84c;
+    color: var(--rating);
 }
 
 .rating .i {
-    color: #c9a84c;
+    color: var(--rating);
 }
 
 .rating svg {
     width: 13px;
     height: 13px;
-    fill: #c9a84c;
+    fill: var(--rating);
 }
 
 .meta-row {
@@ -234,14 +244,14 @@ nav a:hover {
     gap: 8px;
     flex-wrap: wrap;
     font-size: 0.75rem;
-    color: #111827;
+    color: var(--subtext);
 }
 
 .dot {
     width: 3px;
     height: 3px;
     border-radius: 50%;
-    background: #8a8580;
+    background: var(--light-text);
     display: inline-block;
 }
 
@@ -249,6 +259,7 @@ nav a:hover {
     margin-left: 20px;
     border: 0;
     background: none;
+    color: var(--subtext);
 }
 
 .watchlist-add {
@@ -266,7 +277,7 @@ nav a:hover {
 .synopsis {
     font-size: 0.87rem;
     line-height: 1.6;
-    color: #6B7280;
+    color: var(--light-text);
     font-weight: 300;
 }
 
@@ -294,4 +305,14 @@ nav a:hover {
 
 .github-button:hover {
     color: #0366d6;
+}
+
+
+
+@media (min-width: 550px) {
+    
+    .site-header h1 {
+            font-size: 2.62rem;
+        }
+
 }
