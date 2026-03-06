@@ -1,10 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+
+:root {
+    --hover: #e8c96a;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+a {
+    text-decoration: none;
+}
+
+
 
 body {
     background: #ececec;
@@ -71,7 +82,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #e8c96a;
+    color: var(--hover);
 }
 
 /* search bar */
@@ -115,11 +126,12 @@ nav a:hover {
 }
 
 .search-bar button:hover {
-    background: #e8c96a;
+    background: var(--hover);
 }
 
 /* main */
 
+.watchlist,
 .results {
     flex: 1;
     padding: 40px 28px 40px;
@@ -135,7 +147,17 @@ nav a:hover {
     color: #DFDDDD;
     margin: auto;
     text-align: center;
-    width: 60%;
+    width: 70%;
+    line-height: 2;
+}
+
+.add-movies a {
+    font-size: 0.875rem;
+    color: #363636;
+}
+
+.add-movies a:hover {
+    color: var(--hover);
 }
 
 .filmIcon {
@@ -236,7 +258,7 @@ nav a:hover {
 }
 
 .watchlist-add:hover {
-    color: #e8c96a;
+    color: var(--hover);
     cursor: pointer;
 }
 
