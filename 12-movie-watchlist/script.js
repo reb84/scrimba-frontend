@@ -9,6 +9,7 @@ async function handleClick(e) {
   e.preventDefault();
   const query = searchInput.value;
 
+  //   message if input is empty
   if (!query) {
     messageContainer.textContent =
       "Unable to find what you’re looking for. Please try another search.";
@@ -18,11 +19,13 @@ async function handleClick(e) {
     );
     const data = await res.json();
 
+    // message if search is void
     if (!data.Search) {
       messageContainer.textContent = "No results found, try another search.";
       return;
     }
 
+    // wait so both searches display at same time
     searchResults = await Promise.all(
       data.Search.map((movie) =>
         fetch(
@@ -30,17 +33,18 @@ async function handleClick(e) {
         ).then((res) => res.json()),
       ),
     );
+    // should filter out results with bad data
     searchResults = searchResults.filter((m) => m.Response !== "False");
     render(searchResults);
     updateButtons();
   }
 }
 
-// if added so i don't get an error on my watchlist page
 if (searchBtn) {
   searchBtn.addEventListener("click", handleClick);
 }
 
+// map over results and display
 const render = (movies) => {
   resultsContainer.innerHTML = movies
     .map(
@@ -76,6 +80,7 @@ const render = (movies) => {
     .join("");
 };
 
+// update watchlist/remove buttons depending on whats in localstorage
 const updateButtons = () => {
   const watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
   const buttons = document.querySelectorAll(".watchlist-add");
@@ -89,12 +94,12 @@ const updateButtons = () => {
   });
 };
 
+// add/remove localstorage when button clicked
 document.addEventListener("click", (e) => {
   const btn = e.target.closest(".watchlist-add");
 
   if (btn) {
     const id = btn.dataset.id;
-
     const watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
     const movieObject = searchResults.find((m) => m.imdbID === id);
 
@@ -108,6 +113,7 @@ document.addEventListener("click", (e) => {
       localStorage.setItem("watchlist", JSON.stringify(updated));
       btn.innerHTML = `<i class="fa-solid fa-circle-plus"></i> Watchlist`;
 
+      //   rerender if on watchlist page so removals vanish instantly
       if (watchlistContainer) {
         renderWatchlist();
       }
@@ -117,6 +123,20 @@ document.addEventListener("click", (e) => {
 
 const renderWatchlist = () => {
   const watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+
+  //   display message if watchlist is empty
+  if (watchlist.length === 0) {
+    watchlistContainer.innerHTML = `<div class="message">
+          Your watchlist is looking a little empty...
+          <span class="add-movies"
+            ><a href="index.html"
+              ><i class="fa-solid fa-circle-plus"></i> Let's add some movies!</a
+            ></span
+          >
+        </div>`;
+    return;
+  }
+
   watchlistContainer.innerHTML = watchlist
     .map(
       (data) => `
