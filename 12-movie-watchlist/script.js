@@ -30,9 +30,9 @@ async function handleClick(e) {
         ).then((res) => res.json()),
       ),
     );
-searchResults = searchResults.filter((m) => m.Response !== "False");
-render(searchResults);
-updateButtons();
+    searchResults = searchResults.filter((m) => m.Response !== "False");
+    render(searchResults);
+    updateButtons();
   }
 }
 
@@ -49,6 +49,7 @@ const render = (movies) => {
       <img
         src="${data.Poster}"
         alt="${data.Title} poster"
+          onerror="this.src='noimg.jpg'"
       />
       <div class="film-info">
         <div class="film-title-row">
