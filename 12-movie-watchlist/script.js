@@ -15,7 +15,7 @@ async function handleClick(e) {
       "Unable to find what you’re looking for. Please try another search.";
   } else {
     const res = await fetch(
-      `https://www.omdbapi.com/?s=${query}&apikey=59a9ee25`,
+      `https://www.omdbapi.com/?s=${query}&type=movie&apikey=59a9ee25`,
     );
     const data = await res.json();
 
@@ -29,7 +29,7 @@ async function handleClick(e) {
     searchResults = await Promise.all(
       data.Search.map((movie) =>
         fetch(
-          `https://www.omdbapi.com/?i=${movie.imdbID}&apikey=59a9ee25`,
+          `https://www.omdbapi.com/?i=${movie.imdbID}&type=movie&apikey=59a9ee25`,
         ).then((res) => res.json()),
       ),
     );
