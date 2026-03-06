@@ -1,6 +1,7 @@
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
 const resultsContainer = document.getElementById("results");
+const watchlistContainer = document.getElementById("watchlist");
 const messageContainer = document.getElementById("message");
 let searchResults = [];
 
@@ -17,6 +18,11 @@ async function handleClick(e) {
     );
     const data = await res.json();
 
+    if (!data.Search) {
+      messageContainer.textContent = "No results found, try another search.";
+      return;
+    }
+
     searchResults = await Promise.all(
       data.Search.map((movie) =>
         fetch(
@@ -24,8 +30,9 @@ async function handleClick(e) {
         ).then((res) => res.json()),
       ),
     );
-    render(searchResults);
-    updateButtons();
+searchResults = searchResults.filter((m) => m.Response !== "False");
+render(searchResults);
+updateButtons();
   }
 }
 
@@ -55,7 +62,7 @@ const render = (movies) => {
           <span class="runtime">${data.Runtime}</span>
           <span class="dot"></span>
           <span class="genres">${data.Genre}</span>
-          <button id="watchlist-add" class="watchlist-add" data-id="${data.imdbID}">
+          <button class="watchlist-add" data-id="${data.imdbID}">
   <i class="fa-solid fa-circle-plus"></i>
   Watchlist
 </button>
